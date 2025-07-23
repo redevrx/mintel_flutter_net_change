@@ -23,7 +23,7 @@ Add the dependency in your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  mintel_flutter_net_change:1.0.0
+  mintel_flutter_net_change:0.0.2
 ```
 
 ```shell
@@ -159,4 +159,3 @@ class _NetStatusScreenState extends State<NetStatusScreen> {
     );
   }
 }
-```# mintel_flutter_net_change
