@@ -1,7 +1,7 @@
 name: mintel_flutter_net_change
-description: "A new Flutter plugin project."
+description: "A Flutter plugin for detecting internet connectivity changes across Android and iOS using Kotlin Multiplatform (KMP)."
 version: 0.0.1
-homepage:
+homepage: https://github.com/redevrx/mintel_flutter_net_change
 
 environment:
   sdk: ^3.8.1
