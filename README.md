@@ -1,4 +1,4 @@
-# mintel_flutter_net_change
+# Mintel Flutter Net Change
 
 A Flutter plugin for detecting internet connectivity changes across Android and iOS using Kotlin Multiplatform (KMP).
 
@@ -23,9 +23,7 @@ Add the dependency in your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  mintel_flutter_net_change:
-    git:
-      url: https://github.com/your-org/mintel_flutter_net_change.git
+  mintel_flutter_net_change:1.0.0
 ```
 
 ```shell
@@ -87,15 +85,6 @@ Shared Kotlin Logic (Flow<Boolean>)
 
 ## Example
 ```dart
-import 'dart:async';
-
-import 'package:flutter/material.dart';
-import 'package:mintel_flutter_net_change/mintel_flutter_net_change.dart';
-
-void main() {
-  runApp(const NetChangeExampleApp());
-}
-
 class NetChangeExampleApp extends StatelessWidget {
   const NetChangeExampleApp({super.key});
 
@@ -117,7 +106,7 @@ class NetStatusScreen extends StatefulWidget {
 }
 
 class _NetStatusScreenState extends State<NetStatusScreen> {
-  final _plugin = MintelFlutterNetChange.instance;
+  final _plugin = NetworkMonitor.instance;
   late final StreamSubscription<bool> _subscription;
   bool _isConnected = true;
 
@@ -128,7 +117,7 @@ class _NetStatusScreenState extends State<NetStatusScreen> {
   }
 
   void _startSubscription() {
-    _subscription = _plugin.onConnChange().listen((connected) {
+    _subscription = _plugin.onConnectionChange().listen((connected) {
       setState(() {
         _isConnected = connected;
       });

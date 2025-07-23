@@ -1,0 +1,45 @@
+//plugins {
+//    id 'maven-publish'
+//}
+apply plugin: 'maven-publish'
+
+afterEvaluate {
+    publishing {
+        publications {
+            aar(MavenPublication) {
+                groupId = 'com.redev.rx'
+                artifactId = 'rx_connection_change'
+                version = '1.0.0'
+
+                artifact("$projectDir/libs/rx_connection_change.aar") {
+                    extension 'aar'
+                }
+
+                pom {
+                    name = 'Rx Connection Change'
+                    description = 'A library for network connection changes'
+                    url = 'https://redevrx.com'
+                    licenses {
+                        license {
+                            name = 'The Apache License, Version 2.0'
+                            url = 'https://www.apache.org/licenses/LICENSE-2.0.txt'
+                        }
+                    }
+                    developers {
+                        developer {
+                            id = 'redev'
+                            name = 'Redev.rx Team'
+                            email = 'contact@redev.com'
+                        }
+                    }
+                }
+            }
+        }
+
+        repositories {
+            mavenLocal()
+        }
+    }
+}
+
+//./gradlew -b publish_to_local.gradle publish
