@@ -14,7 +14,13 @@ class NetworkMonitor {
   Stream<bool> onConnectionChange() => platform.onConnChange();
 
   Future<bool> get isHasInternet async {
-    final result = await InternetAddress.lookup("google.com");
-    return result.isNotEmpty && result[0].rawAddress.isNotEmpty;
+    try {
+      final result = await InternetAddress.lookup('google.com');
+      final isConnected = result.isNotEmpty && result[0].rawAddress.isNotEmpty;
+
+      return isConnected;
+    } on SocketException catch (_) {
+      return false;
+    }
   }
 }

@@ -6,3 +6,6 @@
 
 ## 0.0.3
  - Add Check network
+
+## 0.0.4
+- Fix defect
