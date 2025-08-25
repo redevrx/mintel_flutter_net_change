@@ -23,7 +23,7 @@ class _MyAppState extends State<MyApp> {
 
   bool isConnected = false;
   void subscriptionNetChange() {
-    _plugin.isHasInternet.then((isConnected) {
+    _plugin.hasInternet.then((isConnected) {
       ///first check internet
       setState(() {
         this.isConnected = isConnected;
