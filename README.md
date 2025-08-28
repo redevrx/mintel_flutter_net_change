@@ -23,7 +23,7 @@ Add the dependency in your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  mintel_flutter_net_change:0.0.5
+  mintel_flutter_net_change:0.0.6
 ```
 
 ```shell

@@ -15,3 +15,6 @@
 - New Check internet
 - Add custom host
 - deprecate isHasInternet
+
+## 0.0.6
+- update Android lib.so 16 MB memory page size
